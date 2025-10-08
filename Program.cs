@@ -181,7 +181,24 @@ while (ciclo)
             break;
         case 21: // Diccionario de libros agrupados por primera letra del titulo
             var diccionarioLookup = queries.DiccionariosDeLibrosPorLetra();
-            ImprimirDiccionario(diccionarioLookup, 'Z');
+            char letra; // letra para filtrar
+
+            // Manejo de excepcion si el usuario ingresa un valor no valido
+            try {
+                // Pedir al usuario una letra para filtrar
+                Console.Write("Ingrese una letra para filtrar los libros por la primera letra del titulo: ");
+                letra = Convert.ToChar(Console.ReadLine().ToUpper()); // convertir a mayusculas
+                Console.WriteLine($"\nLibros que empiezan con la letra '{letra}':\n");
+
+            } catch (FormatException) { // si el usuario ingresa un valor no valido
+                Console.WriteLine("\nError: Debe ingresar un solo caracter.");
+                Console.Write("\nPresione cualquier tecla para continuar...");
+                Console.ReadKey();
+                Console.Clear();
+                break;
+            }
+            // Imprimir los libros que empiezan con la letra ingresada
+            ImprimirDiccionario(diccionarioLookup, letra);
             Console.Write("\nPresione cualquier tecla para continuar...");
             Console.ReadKey();
             Console.Clear();
