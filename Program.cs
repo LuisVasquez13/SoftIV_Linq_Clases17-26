@@ -6,6 +6,7 @@ while (ciclo)
 {
     // Menu
     Console.WriteLine("\nSeleccione una opcion del menu:");
+    Console.WriteLine("\n--Clases 1 - 16:");
     Console.WriteLine("1. Toda la coleccion");
     Console.WriteLine("2. Libros publicados despues del 2000");
     Console.WriteLine("3. Libros que tengan mas de 250 paginas y contengan 'in Action' en el titulo");
@@ -17,6 +18,7 @@ while (ciclo)
     Console.WriteLine("9. Los 3 libros mas recientes de Java");
     Console.WriteLine("10. Tercer y cuarto con mas de 400 paginas");
     Console.WriteLine("11. Tres primeros libros filtrados con Select");
+    Console.WriteLine("\n--Clases 17 - 26:");
     Console.WriteLine("12. Cantidad de libros que tienen entre 200 y 500 paginas");
     Console.WriteLine("13. Fecha de publicacion menor de todos los libros");
     Console.WriteLine("14. Numero de paginas del libro con mayor Numero de paginas");
@@ -49,6 +51,8 @@ while (ciclo)
     // Ejecutar la opcion seleccionada
     switch (opcion)
     {
+        // Ejercicios de las clases 1 a 16
+
         case 1: // Toda la coleccion
             ImprimirValores(queries.TodaLaColeccion());
             Console.Write("\nPresione cualquier tecla para continuar...");
@@ -115,6 +119,10 @@ while (ciclo)
             Console.ReadKey();
             Console.Clear();
             break;
+
+
+        // Ejercicios de las clases 17 a 26
+
         case 12: // Cantidad de libros que tienen entre 200 y 500 paginas
             Console.WriteLine($"Cantidad de libros que tiene entre 200 y 500 pag. {queries.CantidadDeLibrosEntre200y500Pag()}");
             Console.Write("\nPresione cualquier tecla para continuar...");
@@ -184,6 +192,7 @@ while (ciclo)
             Console.ReadKey();
             Console.Clear();
             break;
+
         case 0: // salir
             ciclo = false;
             Console.Clear();
