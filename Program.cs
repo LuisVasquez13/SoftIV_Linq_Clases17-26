@@ -199,10 +199,13 @@ while (ciclo)
             }
             // Imprimir los libros que empiezan con la letra ingresada
             ImprimirDiccionario(diccionarioLookup, letra);
+            if (diccionarioLookup[letra].Count() == 0) // si no hay libros que empiecen con la letra ingresada
+                Console.WriteLine($"\nNo hay libros que empiecen con la letra '{letra}'.");
             Console.Write("\nPresione cualquier tecla para continuar...");
             Console.ReadKey();
             Console.Clear();
             break;
+
         case 22: // Libros filtradaor con la clausula join 
             ImprimirValores(queries.LibrosDespuesdel2005conmasde500Pags());
             Console.Write("\nPresione cualquier tecla para continuar...");
